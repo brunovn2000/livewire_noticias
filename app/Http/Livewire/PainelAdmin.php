@@ -19,13 +19,9 @@ class PainelAdmin extends Component
         ]);
     }
 
-
-
     public function carregarListaNoticias()
     {
         $this->resetPage();
-        // $this->render();
-
     }
 
     public function carregarNoticia($id)
@@ -37,7 +33,6 @@ class PainelAdmin extends Component
     {
         $noticia = Noticias::findOrFail($id);
         $noticia->delete();
-        // $this->resetPage();
-        $this->carregarListaNoticias(); // Atualiza a lista de notícias após a exclusão
+        $this->carregarListaNoticias(); 
     }
 }

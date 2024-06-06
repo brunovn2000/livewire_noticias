@@ -23,12 +23,11 @@ class Login extends Component
 
     public function logar()
     {
-        // $this->validate();
+        $this->validate();
 
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
             return redirect('dash');
         } else {
-            // session()->flash('error', 'Email ou senha incorretos.');
             $this->addError('auth','Email ou senha incorretos ');
         }
     }

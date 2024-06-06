@@ -30,8 +30,6 @@ class ListNoticias extends Component
     public function carregarListaNoticias()
     {
         $this->resetPage();
-        // $this->render();
-
     }
 
     public function carregarNoticia($id)
@@ -39,13 +37,10 @@ class ListNoticias extends Component
         $this->emit('carregarNoticia', $id);
     }
 
-
-
     public function excluirNoticia($id)
     {
         $noticia = Noticias::findOrFail($id);
         $noticia->delete();
-        // $this->resetPage();
         $this->carregarListaNoticias(); 
         $this->emit('apagarNoticia', $id);
 

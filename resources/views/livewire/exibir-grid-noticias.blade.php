@@ -24,7 +24,7 @@
                         <p class="text-gray-700 text-sm">{{ $noticia->descricao }}</p>
                     </div>
                     <div class="flex items-center pt-0">
-                        {{-- <a href="#"><img class="w-10 h-10 rounded-full mr-4" src="" alt="Avatar of Jonathan Reinink"></a> --}}
+                        {{-- <a href="#"><img class="w-10 h-10 rounded-full mr-4" src="" alt=""></a> --}}
                         <div class="text-sm">
                             <a href="#"
                                 class="text-gray-900 font-semibold leading-none hover:text-indigo-600">criador:{{ $noticia->user->name }}
