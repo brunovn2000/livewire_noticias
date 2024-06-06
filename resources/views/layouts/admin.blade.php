@@ -14,15 +14,8 @@
 </style>
 <body class="bg-gray-50 ">
 
-    {{-- <div class="container mx-auto"> --}}
         @yield('content')
-    {{-- </div> --}}
-    {{-- @include('../layouts/header') --}}
-    {{-- <div class="flex-grow">
-    </div> --}}
-    {{-- {{ $slot }} --}}
-  
-    {{-- @include('../layouts/footer')  --}}
+
     @livewireScripts
 </body>
 </html>

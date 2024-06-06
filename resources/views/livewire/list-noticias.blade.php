@@ -8,56 +8,65 @@
                 <table class="min-w-full leading-normal">
                     <thead>
                         <tr>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                 Imagem
                             </th>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                 Titulo
                             </th>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                 Data Criação
                             </th>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                 Descrição
                             </th>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                 Editar
                             </th>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                 Excluir
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($noticias as $noticia)
-                        <tr>
-                            <td class="px-1 py-1 border-b border-gray-200 bg-white text-sm">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 w-20 h-20 ml-5">
-                                        <img class="w-full h-full rounded-full" src="{{ asset('storage/' . $noticia->imagem) }}" alt="" />
+                            <tr>
+                                <td class="px-1 py-1 border-b border-gray-200 bg-white text-sm">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 w-20 h-20 ml-5">
+                                            <img class="w-full h-full rounded-full"
+                                                src="{{ asset('storage/' . $noticia->imagem) }}" alt="" />
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $noticia->titulo }}</p>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $noticia->created_at }}</p>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $noticia->descricao }}</p>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <button wire:click="carregarNoticia({{ $noticia->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                    Editar
-                                </button>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <button wire:click="excluirNoticia({{ $noticia->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                    Excluir
-                                </button>
-                            </td>
-                        </tr>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">{{ $noticia->titulo }}</p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">{{ $noticia->created_at }}</p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">{{ $noticia->descricao }}</p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <button wire:click="carregarNoticia({{ $noticia->id }})"
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                        Editar
+                                    </button>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <button wire:click="excluirNoticia({{ $noticia->id }})"
+                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                        Excluir
+                                    </button>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -69,5 +78,5 @@
             </div>
         </div>
     </div>
-    
+
 </div>
